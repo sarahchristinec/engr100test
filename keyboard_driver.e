@@ -17,7 +17,7 @@ keyboard_lower_cmd	cp	keyboard_event		0x80000022
 			cp	keyboard_ascii		0x80000023
 			cp	0x80000020		num_0
 
-keyboard_response2	be	keyboard_done			0x80000021	num_0
+keyboard_response2	be	keyboard_done		0x80000021	num_0
 			be	keyboard_response2	0		0
 
 keyboard_done		ret	keyboard_return_reg
