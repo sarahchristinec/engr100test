@@ -15,9 +15,9 @@
 //mouse_button3 is bit0 of 0x80000076
 
 
-mouse_start	cp	0x80000070	mouse_num_1
+mouse_start	cp	0x80000070	num_1
 
-mouse_response1	be	mouse_lower_cmd	0x80000071	mouse_num_1
+mouse_response1	be	mouse_lower_cmd	0x80000071	num_1
 		be	mouse_response1	0		0
 
 mouse_lower_cmd	cp	mouse_deltax	0x80000072
@@ -26,15 +26,18 @@ mouse_lower_cmd	cp	mouse_deltax	0x80000072
 		cp	mouse_button2	0x80000075
 		cp	mouse_button3	0x80000076
 
-		cp	0x80000070	mouse_num_0
+		cp	0x80000070	num_0
 
-mouse_response0	be	mouse_done	0x80000071	mouse_num_0
+mouse_response0	be	mouse_done	0x80000071	num_0
 		be	mouse_response0	0		0
 
 mouse_done	ret	mouse_return_reg
 		halt
 
 
-mouse_num_0	0
-mouse_num_1	1
-
+mouse_deltax		0
+mouse_deltay		0
+mouse_button1		0
+mouse_button2		0
+mouse_button3		0
+mouse_return_reg	0

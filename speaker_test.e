@@ -1,18 +1,13 @@
-speaker_forever		cp	speaker_iterator	speaker_test_num_0
+speaker_forever		cp	speaker_iterator	num_0
 speaker_test_start	be	done			speaker_iterator	speaker_length
 			cpfa	speaker_sample		speaker_memstart	speaker_iterator
 			call	speaker_start		speaker_return_reg
-			add	speaker_iterator	speaker_iterator	speaker_test_num_1	//iterate
+			add	speaker_iterator	speaker_iterator	num_1	//iterate
 			be	speaker_test_start	0	0
 done			be	speaker_forever	0	0
 			halt
 
-speaker_test_num_1	1
-speaker_test_num_0	0
 speaker_length		19
-
-speaker_sample		0
-speaker_return_reg	0
 speaker_iterator	0
 
 speaker_memstart	0
@@ -38,3 +33,4 @@ speaker_memstart	0
 
 // receives speaker_sample in speaker_sample
 #include speaker_driver.e
+#include numbers.e

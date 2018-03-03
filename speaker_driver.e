@@ -7,20 +7,19 @@
 //speaker_sample is bits 31-0 of 0x80000042
 
 speaker_start	cp	0x80000042	speaker_sample
-		cp	0x80000040	speaker_num_1
+		cp	0x80000040	num_1
 
-speaker_response1	be	speaker_lower_cmd	0x80000041	speaker_num_1
+speaker_response1	be	speaker_lower_cmd	0x80000041	num_1
 			be	speaker_response1	0		0
 
-speaker_lower_cmd	cp	0x80000040	speaker_num_0
+speaker_lower_cmd	cp	0x80000040	num_0
 
-speaker_response0	be	speaker_done	0x80000041	speaker_num_0
+speaker_response0	be	speaker_done	0x80000041	num_0
 			be	speaker_response0	0		0
 
 speaker_done	ret	speaker_return_reg
 		halt
 
 
-speaker_num_0	0
-speaker_num_1	1
-
+speaker_sample		0
+speaker_return_reg	0
