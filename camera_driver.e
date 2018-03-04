@@ -28,7 +28,8 @@ camera_done		ret	camera_return_reg
 			halt
 
 
-camera_x	0
-camera_y	0
-camera_scale	0
-camera_mirror	0
+camera_x		0
+camera_y		0
+camera_scale		0
+camera_mirror		0
+camera_return_reg	0
